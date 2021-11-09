@@ -1,52 +1,3 @@
-spawn(function()
-	wait(3)
-	rr = 255
-	gg = 175
-	bb = 175
-	bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
-	while wait() do
-		if _G.RainbowUI then
-			if rr > 254 and gg < 176 and bb < 176 then
-				repeat wait()
-					gg += 1
-					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
-				until  ( rr > 254 and gg > 254 and bb < 176 ) or not _G.RainbowUI
-			elseif rr > 254 and gg > 254 and bb < 176 then
-				repeat wait()
-					rr -= 1
-					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
-				until ( rr < 176 and gg > 254 and bb < 176 ) or not _G.RainbowUI
-			elseif rr < 176 and gg > 254 and bb < 176 then
-				repeat wait()
-					bb += 1
-					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
-				until ( rr < 176 and gg > 254 and bb > 254 ) or not _G.RainbowUI
-			elseif rr < 176 and gg > 254 and bb > 254 then
-				repeat wait()
-					gg -= 1
-					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
-				until ( rr < 176 and gg < 176 and bb > 254 ) or not _G.RainbowUI
-			elseif rr < 176 and gg < 176 and bb > 254 then
-				repeat wait()
-					rr += 1
-					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
-				until ( rr > 254 and gg < 176 and bb > 254 ) or not _G.RainbowUI
-			elseif rr > 254 and gg < 176 and bb > 254 then
-				repeat wait()
-					bb -= 1
-					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
-				until ( rr > 254 and gg < 176 and bb < 176 ) or not _G.RainbowUI
-
-			else
-				rr = 255
-				gg = 175
-				bb = 175
-				bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
-			end
-		end
-	end
-end)
-
 -- init
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
@@ -646,14 +597,14 @@ do
 		notification.Position = library.lastNotification or UDim2.new(0, 10, 1, -(notification.AbsoluteSize.Y + padding))
 		notification.Size = UDim2.new(0, 0, 0, 60)
 		
-		utility:Tween(notification, {Size = UDim2.new(0, textSize.X + 70, 0, 60)}, 0.05)
-		wait(0.05)
+		utility:Tween(notification, {Size = UDim2.new(0, textSize.X + 70, 0, 60)}, 0.1)
+		wait(0.1)
 		
 		notification.ClipsDescendants = false
 		utility:Tween(notification.Flash, {
 			Size = UDim2.new(0, 0, 0, 60),
 			Position = UDim2.new(1, 0, 0, 0)
-		}, 0.05)
+		}, 0.1)
 		
 		-- callbacks
 		local active = true
@@ -668,15 +619,15 @@ do
 			
 			library.lastNotification = notification.Position
 			notification.Flash.Position = UDim2.new(0, 0, 0, 0)
-			utility:Tween(notification.Flash, {Size = UDim2.new(1, 0, 1, 0)}, 0.05)
+			utility:Tween(notification.Flash, {Size = UDim2.new(1, 0, 1, 0)}, 0.1)
 			
-			wait(0.05)
+			wait(0.1)
 			utility:Tween(notification, {
 				Size = UDim2.new(0, 0, 0, 60),
 				Position = notification.Position + UDim2.new(0, textSize.X + 70, 0, 0)
-			}, 0.05)
+			}, 0.1)
 			
-			wait(0.05)
+			wait(0.1)
 			notification:Destroy()
 		end
 		
