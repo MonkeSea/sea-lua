@@ -11,6 +11,54 @@ local tweeninfo = TweenInfo.new
 -- additional
 local utility = {}
 
+spawn(function()
+	rr = 255
+	gg = 175
+	bb = 175
+	bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
+	while wait() do
+		if _G.RainbowUI then
+			if rr > 254 and gg < 176 and bb < 176 then
+				repeat wait()
+					gg += 1
+					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
+				until  ( rr > 254 and gg > 254 and bb < 176 ) or not _G.RainbowUI
+			elseif rr > 254 and gg > 254 and bb < 176 then
+				repeat wait()
+					rr -= 1
+					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
+				until ( rr < 176 and gg > 254 and bb < 176 ) or not _G.RainbowUI
+			elseif rr < 176 and gg > 254 and bb < 176 then
+				repeat wait()
+					bb += 1
+					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
+				until ( rr < 176 and gg > 254 and bb > 254 ) or not _G.RainbowUI
+			elseif rr < 176 and gg > 254 and bb > 254 then
+				repeat wait()
+					gg -= 1
+					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
+				until ( rr < 176 and gg < 176 and bb > 254 ) or not _G.RainbowUI
+			elseif rr < 176 and gg < 176 and bb > 254 then
+				repeat wait()
+					rr += 1
+					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
+				until ( rr > 254 and gg < 176 and bb > 254 ) or not _G.RainbowUI
+			elseif rr > 254 and gg < 176 and bb > 254 then
+				repeat wait()
+					bb -= 1
+					bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
+				until ( rr > 254 and gg < 176 and bb < 176 ) or not _G.RainbowUI
+
+			else
+				rr = 255
+				gg = 175
+				bb = 175
+				bfseaDev:setTheme("TextColor", Color3.fromRGB(rr, gg, bb))
+			end
+		end
+	end
+end)
+
 -- themes
 local objects = {}
 local themes = {
