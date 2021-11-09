@@ -1,17 +1,5 @@
--- init
-local player = game.Players.LocalPlayer
-local mouse = player:GetMouse()
-
--- services
-local input = game:GetService("UserInputService")
-local run = game:GetService("RunService")
-local tween = game:GetService("TweenService")
-local tweeninfo = TweenInfo.new
-
--- additional
-local utility = {}
-
 spawn(function()
+	wait(3)
 	rr = 255
 	gg = 175
 	bb = 175
@@ -58,6 +46,19 @@ spawn(function()
 		end
 	end
 end)
+
+-- init
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+
+-- services
+local input = game:GetService("UserInputService")
+local run = game:GetService("RunService")
+local tween = game:GetService("TweenService")
+local tweeninfo = TweenInfo.new
+
+-- additional
+local utility = {}
 
 -- themes
 local objects = {}
@@ -645,14 +646,14 @@ do
 		notification.Position = library.lastNotification or UDim2.new(0, 10, 1, -(notification.AbsoluteSize.Y + padding))
 		notification.Size = UDim2.new(0, 0, 0, 60)
 		
-		utility:Tween(notification, {Size = UDim2.new(0, textSize.X + 70, 0, 60)}, 0.03)
-		wait(0.03)
+		utility:Tween(notification, {Size = UDim2.new(0, textSize.X + 70, 0, 60)}, 0.05)
+		wait(0.05)
 		
 		notification.ClipsDescendants = false
 		utility:Tween(notification.Flash, {
 			Size = UDim2.new(0, 0, 0, 60),
 			Position = UDim2.new(1, 0, 0, 0)
-		}, 0.03)
+		}, 0.05)
 		
 		-- callbacks
 		local active = true
@@ -669,13 +670,13 @@ do
 			notification.Flash.Position = UDim2.new(0, 0, 0, 0)
 			utility:Tween(notification.Flash, {Size = UDim2.new(1, 0, 1, 0)}, 0.05)
 			
-			wait(0.03)
+			wait(0.05)
 			utility:Tween(notification, {
 				Size = UDim2.new(0, 0, 0, 60),
 				Position = notification.Position + UDim2.new(0, textSize.X + 70, 0, 0)
 			}, 0.05)
 			
-			wait(0.03)
+			wait(0.05)
 			notification:Destroy()
 		end
 		
