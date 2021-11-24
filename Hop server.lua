@@ -50,13 +50,13 @@ local PlaceID = game.PlaceId
                                     end
                                     
                                     function Teleport() 
-                                        
+                                        while wait(1) do
                                             pcall(function()
                                                 TPReturner()
                                                 if foundAnything ~= "" then
                                                     TPReturner()
                                                 end
                                             end)
-                                        
+                                        end
                                     end
                                     Teleport()
