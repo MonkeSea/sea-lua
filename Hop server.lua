@@ -48,15 +48,15 @@ local PlaceID = game.PlaceId
                                             end
                                         end
                                     end
-                                    afswefesa = false
+                                    
                                     function Teleport() 
-                                        repeat wait(1)
+                                        
                                             pcall(function()
                                                 TPReturner()
                                                 if foundAnything ~= "" then
                                                     TPReturner()
                                                 end
                                             end)
-                                        until afswefesa
+                                        
                                     end
                                     Teleport()
