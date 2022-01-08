@@ -3259,35 +3259,5 @@ function EngUi:Window(text,maincolor)
    end
    return ServerHold
 end
---[[
-local win = EngUi:Window("")
-local serv = win:Server("Eng Hub", "")
-local teest = serv:Channel("Tab 1")
-
-teest:Label("Kuy 1")
-teest:Line()
-
-teest:Toggle("Toggle",false,function()
-    print("Toggle on")
-end)
-
-teest:Button("Button", function()
-   EngUi:Notification("titletext", "desctext", "btntext")
-end)
-
-Kuy1 = 50
-teest:Slider("Slider",1,100,Kuy1,function(value)
-    slidertest = value
-    print(slidertest)
-end)
-
-teest:Dropdown("Dropdown",{"1","2","3"},function(value)
-    dropdown =  value
-    print(dropdown)
-end)
-
-local tet = serv:Channel("Tab 2")
-
-tet:Toggle("I Na HEE",false,function()
-    print("Tab 2")
-end)]]
+warn("Imported Ui")
+return EngUi
