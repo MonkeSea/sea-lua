@@ -2758,7 +2758,9 @@ function EngUi:Window(text,maincolor)
                DropdownFrameMainOutline.Visible = false
                ChannelHolder.CanvasSize = UDim2.new(0,0,0,ChannelHolderLayout.AbsoluteContentSize.Y)
             end
-
+            function DropFunc:Refresh_SelectedText(newtext)
+               CurrentSelectedText.Text = tostring(newtext)
+            end
             function DropFunc:Add(textadd)
                itemcount = itemcount + 1
 
